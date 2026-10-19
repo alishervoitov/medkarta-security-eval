@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+owasp_test_report.md
+fi_experiment/

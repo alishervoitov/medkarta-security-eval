@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "MedKarta security evaluation: state-aware tests and fault-injection harness"
+type: software
+authors:
+  - family-names: "Voitov"
+    given-names: "Alisher"
+version: 0.1.0
+date-released: 2026-10-19
+license: MIT
