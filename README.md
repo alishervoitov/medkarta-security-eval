@@ -63,3 +63,37 @@ Do **not** run these tests against systems you do not own. Code comments and out
 ## License
 
 MIT (see `LICENSE`).
+
+## Replication on other Django/DRF projects (`replication/fi_targets.py`)
+
+The detectors were re-implemented as target-agnostic checks (per-target config: URL prefix, token
+endpoint, ownership / shared-write oracles, mutation pattern) and run on five projects:
+
+* `healthcare-backend` (third-party, Django 6.1 / DRF 3.18 / simplejwt): all controls present;
+  six source/config faults (F1 logout, F2 throttling, F4 IDOR, F5 object permission, F7 headers, F8 DEBUG)
+  are injected one at a time. Result: each fault flips exactly its own detector (clean diagonal).
+* `TandoorRecipes/recipes` (third-party, Django 5.2 / DRF 3.18, allauth headless session tokens, space-based
+  multi-tenancy and guest/user/admin groups; faults pre-registered in `FAULTS_PREREGISTERED_tandoor.md`).
+  Five injected faults (rate limiting, two-layer space isolation, two-layer guest write permission, nosniff, DEBUG):
+  each flips exactly its own detector. Setup notes: python-ldap omitted; `DJANGO_SETTINGS_MODULE=recipes.settings`.
+* `wger` (third-party, Django/DRF + allauth headless JWT + django-axes; faults pre-registered in
+  `FAULTS_PREREGISTERED_wger.md` before any run). Deviation: W-F7 is uninformative because wger ships
+  without `SecurityMiddleware` (D7 already FAILs on the unmodified code).
+* `authorization_api`, `b2c-system` (own projects, same author, similar code base): detectors run on the
+  unmodified code (natural findings) plus settings-level repairs and one code fault (b2c-system D4).
+
+Each run uses a throw-away copy, a fresh SQLite DB, an in-memory e-mail backend and `127.0.0.1` only.
+
+    git clone https://github.com/alishervoitov/authorization_api src/authorization_api
+    git clone https://github.com/alishervoitov/b2c-system src/b2c-system
+    git clone https://github.com/Sumit99589/healthcare-backend src/healthcare-backend
+    # venv 1 (Python 3.12): Django==4.1.5 djangorestframework==3.14.0 djangorestframework-simplejwt==5.2.2
+    #   drf-yasg==1.21.4 django-cors-headers==3.13.0 django-filter==22.1 django-countries==7.5
+    #   django-model-utils==4.3.1 django-dotenv==1.4.2 whitenoise==6.2.0 Pillow requests PyJWT setuptools==69.5.1
+    # venv 2 (Python 3.12): pip install -r src/healthcare-backend/requirements.txt requests
+    venv/bin/python replication/fi_targets.py --src src --work work --python $PWD/venv/bin/python \
+        --py healthcare-backend=$PWD/venv_hc/bin/python
+
+Statuses: PASS (control effective), FAIL (control present but ineffective), ABSENT (no such control),
+N/A (not applicable). D7 scores X-Content-Type-Options, X-Frame-Options and Referrer-Policy
+(CSP absence is noted, not scored). Results: `results/replication_results.md`.
