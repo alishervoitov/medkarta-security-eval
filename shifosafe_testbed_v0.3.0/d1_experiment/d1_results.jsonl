@@ -1,0 +1,4 @@
+{"config": "F1", "D1": {"logout": 400, "refresh_after": 200, "triggered": true}, "D1prime": {"logout": 401, "refresh_after": 200, "triggered": true}}
+{"config": "PREFIX", "D1": {"logout": 205, "refresh_after": 401, "triggered": false}, "D1prime": {"logout": 401, "refresh_after": 200, "triggered": true}}
+{"config": "ALLOWANY", "D1": {"logout": 205, "refresh_after": 401, "triggered": false}, "D1prime": {"logout": 401, "refresh_after": 200, "triggered": true}}
+{"config": "FIXED", "D1": {"logout": 205, "refresh_after": 401, "triggered": false}, "D1prime": {"logout": 205, "refresh_after": 401, "triggered": false}}

@@ -1,0 +1,34 @@
+# ShifoSafe test bed (sanitised). Differences from the production file:
+#   * no Caddy / public ports; the only published port is bound to 127.0.0.1:8081
+#   * secrets come from .env.testbed (copy env.testbed.example; never commit it)
+#   * log rotation and restart policies removed
+# Run with a UNIQUE project name so it cannot touch another stack:
+#   docker compose -p fi -f docker-compose.testbed.yml --env-file .env.testbed up -d --build
+services:
+  db:
+    image: postgres:16-alpine
+    env_file: .env.testbed
+    volumes: [pg_data:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  redis:
+    image: redis:7-alpine
+  backend:
+    build: ./app            # your own Django/DRF copy; ShifoSafe source is not distributed
+    env_file: .env.testbed
+    expose: ["8000"]
+    volumes: [media_data:/app/media, protected_media_data:/app/protected_media, staticfiles_data:/app/staticfiles, logs_data:/app/logs]
+    depends_on:
+      db: {condition: service_healthy}
+      redis: {condition: service_started}
+  web:
+    build:
+      context: ./frontend   # any static front end; only nginx.conf matters for detector D7
+      dockerfile: Dockerfile.prod
+    ports: ["127.0.0.1:8081:80"]
+    volumes: [staticfiles_data:/staticfiles:ro, media_data:/media:ro]
+    depends_on: [backend]
+volumes: {pg_data: {}, media_data: {}, protected_media_data: {}, staticfiles_data: {}, logs_data: {}}
