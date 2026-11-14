@@ -1,5 +1,7 @@
 # ShifoSafe security evaluation (repository name: medkarta-security-eval)
 
+ShifoSafe is the name used in the paper for the application that this repository calls MedKarta (the old name is kept in repository, path and variable names such as `MEDKARTA_BACKEND`).
+
 Reproducibility package for a study of **silently ineffective security controls** in a
 small medical-records web application (Django REST Framework, PostgreSQL, React, nginx,
 Docker Compose). It contains:
@@ -10,7 +12,7 @@ Docker Compose). It contains:
 | `fault_injection/fi_run.py` | Harness that injects 8 controlled faults one at a time into a throw-away copy of the application, rebuilds it, runs 8 detectors (D1-D8) and OWASP ZAP baseline, and writes a detector x fault matrix. |
 | `fault_injection/test_mutations.py` | Offline check that each mutation applies to sample code (no Docker needed). |
 | `results/fi_results.md` | Results of the run reported in the paper. |
-
+| `shifosafe_testbed_v0.3.0/` | Sanitised test bed: Compose file, environment template, synthetic-data specification, detector specifications, expected results and the D1' experiment (v0.3.0). |
 ## Faults and detectors
 
 | ID | Fault (control silently disabled) | OWASP | Detector |
