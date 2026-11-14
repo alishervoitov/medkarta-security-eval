@@ -1,4 +1,4 @@
-# MedKarta security evaluation
+# ShifoSafe security evaluation (repository name: medkarta-security-eval)
 
 Reproducibility package for a study of **silently ineffective security controls** in a
 small medical-records web application (Django REST Framework, PostgreSQL, React, nginx,
