@@ -1,0 +1,380 @@
+{
+ "BASE": {
+  "D4": [
+   false,
+   "foreign record GET=404, list overlap=0",
+   true
+  ],
+  "D5": [
+   false,
+   "patient GET /api/auth/users/ = 403",
+   true
+  ],
+  "D7": [
+   false,
+   "missing: none",
+   true
+  ],
+  "D8": [
+   false,
+   "404 statuses=[404, 404], debug trace=False",
+   true
+  ],
+  "D6": [
+   false,
+   "existing=200, unknown=200",
+   true
+  ],
+  "D1": [
+   false,
+   "logout=205, refresh after logout=401",
+   true
+  ],
+  "D2": [
+   false,
+   "12 attempts, statuses=[401, 429]",
+   true
+  ],
+  "D3": [
+   false,
+   "5 wrong=[401, 401, 401, 401, 401], then correct password=403",
+   true
+  ]
+ },
+ "F1": {
+  "D4": [
+   false,
+   "foreign record GET=404, list overlap=0",
+   true
+  ],
+  "D5": [
+   false,
+   "patient GET /api/auth/users/ = 403",
+   true
+  ],
+  "D7": [
+   false,
+   "missing: none",
+   true
+  ],
+  "D8": [
+   false,
+   "404 statuses=[404, 404], debug trace=False",
+   true
+  ],
+  "D6": [
+   false,
+   "existing=200, unknown=200",
+   true
+  ],
+  "D1": [
+   true,
+   "logout=400, refresh after logout=200",
+   true
+  ],
+  "D2": [
+   false,
+   "12 attempts, statuses=[401, 429]",
+   true
+  ],
+  "D3": [
+   false,
+   "5 wrong=[401, 401, 401, 401, 401], then correct password=403",
+   true
+  ]
+ },
+ "F2": {
+  "D4": [
+   false,
+   "foreign record GET=404, list overlap=0",
+   true
+  ],
+  "D5": [
+   false,
+   "patient GET /api/auth/users/ = 403",
+   true
+  ],
+  "D7": [
+   false,
+   "missing: none",
+   true
+  ],
+  "D8": [
+   false,
+   "404 statuses=[404, 404], debug trace=False",
+   true
+  ],
+  "D6": [
+   false,
+   "existing=200, unknown=200",
+   true
+  ],
+  "D1": [
+   false,
+   "logout=205, refresh after logout=401",
+   true
+  ],
+  "D2": [
+   true,
+   "12 attempts, statuses=[401]",
+   true
+  ],
+  "D3": [
+   false,
+   "5 wrong=[401, 401, 401, 401, 401], then correct password=403",
+   true
+  ]
+ },
+ "F3": {
+  "D4": [
+   false,
+   "foreign record GET=404, list overlap=0",
+   true
+  ],
+  "D5": [
+   false,
+   "patient GET /api/auth/users/ = 403",
+   true
+  ],
+  "D7": [
+   false,
+   "missing: none",
+   true
+  ],
+  "D8": [
+   false,
+   "404 statuses=[404, 404], debug trace=False",
+   true
+  ],
+  "D6": [
+   false,
+   "existing=200, unknown=200",
+   true
+  ],
+  "D1": [
+   false,
+   "logout=205, refresh after logout=401",
+   true
+  ],
+  "D2": [
+   false,
+   "12 attempts, statuses=[401, 429]",
+   true
+  ],
+  "D3": [
+   true,
+   "5 wrong=[401, 401, 401, 401, 401], then correct password=200",
+   true
+  ]
+ },
+ "F4": {
+  "D4": [
+   true,
+   "foreign record GET=200, list overlap=4",
+   true
+  ],
+  "D5": [
+   false,
+   "patient GET /api/auth/users/ = 403",
+   true
+  ],
+  "D7": [
+   false,
+   "missing: none",
+   true
+  ],
+  "D8": [
+   false,
+   "404 statuses=[404, 404], debug trace=False",
+   true
+  ],
+  "D6": [
+   false,
+   "existing=200, unknown=200",
+   true
+  ],
+  "D1": [
+   false,
+   "logout=205, refresh after logout=401",
+   true
+  ],
+  "D2": [
+   false,
+   "12 attempts, statuses=[401, 429]",
+   true
+  ],
+  "D3": [
+   false,
+   "5 wrong=[401, 401, 401, 401, 401], then correct password=403",
+   true
+  ]
+ },
+ "F5": {
+  "D4": [
+   false,
+   "foreign record GET=404, list overlap=0",
+   true
+  ],
+  "D5": [
+   true,
+   "patient GET /api/auth/users/ = 200",
+   true
+  ],
+  "D7": [
+   false,
+   "missing: none",
+   true
+  ],
+  "D8": [
+   false,
+   "404 statuses=[404, 404], debug trace=False",
+   true
+  ],
+  "D6": [
+   false,
+   "existing=200, unknown=200",
+   true
+  ],
+  "D1": [
+   false,
+   "logout=205, refresh after logout=401",
+   true
+  ],
+  "D2": [
+   false,
+   "12 attempts, statuses=[401, 429]",
+   true
+  ],
+  "D3": [
+   false,
+   "5 wrong=[401, 401, 401, 401, 401], then correct password=403",
+   true
+  ]
+ },
+ "F6": {
+  "D4": [
+   false,
+   "foreign record GET=404, list overlap=0",
+   true
+  ],
+  "D5": [
+   false,
+   "patient GET /api/auth/users/ = 403",
+   true
+  ],
+  "D7": [
+   false,
+   "missing: none",
+   true
+  ],
+  "D8": [
+   false,
+   "404 statuses=[404, 404], debug trace=False",
+   true
+  ],
+  "D6": [
+   true,
+   "existing=200, unknown=404",
+   true
+  ],
+  "D1": [
+   false,
+   "logout=205, refresh after logout=401",
+   true
+  ],
+  "D2": [
+   false,
+   "12 attempts, statuses=[401, 429]",
+   true
+  ],
+  "D3": [
+   false,
+   "5 wrong=[401, 401, 401, 401, 401], then correct password=403",
+   true
+  ]
+ },
+ "F7": {
+  "D4": [
+   false,
+   "foreign record GET=404, list overlap=0",
+   true
+  ],
+  "D5": [
+   false,
+   "patient GET /api/auth/users/ = 403",
+   true
+  ],
+  "D7": [
+   true,
+   "missing: content-security-policy,x-content-type-options,x-frame-options",
+   true
+  ],
+  "D8": [
+   false,
+   "404 statuses=[404, 404], debug trace=False",
+   true
+  ],
+  "D6": [
+   false,
+   "existing=200, unknown=200",
+   true
+  ],
+  "D1": [
+   false,
+   "logout=205, refresh after logout=401",
+   true
+  ],
+  "D2": [
+   false,
+   "12 attempts, statuses=[401, 429]",
+   true
+  ],
+  "D3": [
+   false,
+   "5 wrong=[401, 401, 401, 401, 401], then correct password=403",
+   true
+  ]
+ },
+ "F8": {
+  "D4": [
+   false,
+   "foreign record GET=404, list overlap=0",
+   true
+  ],
+  "D5": [
+   false,
+   "patient GET /api/auth/users/ = 403",
+   true
+  ],
+  "D7": [
+   false,
+   "missing: none",
+   true
+  ],
+  "D8": [
+   true,
+   "404 statuses=[404, 404], debug trace=True",
+   true
+  ],
+  "D6": [
+   false,
+   "existing=200, unknown=200",
+   true
+  ],
+  "D1": [
+   false,
+   "logout=205, refresh after logout=401",
+   true
+  ],
+  "D2": [
+   false,
+   "12 attempts, statuses=[401, 429]",
+   true
+  ],
+  "D3": [
+   false,
+   "5 wrong=[401, 401, 401, 401, 401], then correct password=403",
+   true
+  ]
+ }
+}
